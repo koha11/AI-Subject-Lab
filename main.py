@@ -38,7 +38,7 @@ if __name__ == "__main__":
     # AT(sodinh,adj,h,17,16)
     # CMS(sodinh, adj, 0, 9)
     # a_star(sodinh,adj,h,0,10)
-    # branch_and_bound(sodinh,adj,h,0,7)
+    branch_and_bound(sodinh,adj,h,0,7)
 
     
 

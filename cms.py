@@ -6,7 +6,14 @@ def CMS(sodinh, adj, start, stop):
   CHA=[-1] * sodinh
   
   while(len(OPEN) > 0):
-    n = min(OPEN, key=lambda x: g[x]) # thieu thop co nhieu dinh == min nhma chua stop trong do
+    print(f"g = {g}")
+    n = min(OPEN, key=lambda x: g[x]) 
+    
+    # thop co nhieu dinh trong OPEN == min, co chua stop trong do
+    min_list = [i for i, x in enumerate(g) if x == g[n]]        
+    if stop in min_list and stop in OPEN: 
+      n = stop
+
     OPEN.remove(n)
     
     print(f"n={n}")

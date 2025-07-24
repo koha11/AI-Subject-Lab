@@ -48,9 +48,11 @@ def branch_and_bound(sodinh, adj, h, start, stop):
           continue
           
         if i in CLOSE: # thuoc CLOSE
-          g[i] = gi
-          f[i] = fi
-          Tn.append(i)
+          if fi < f[i]:
+            g[i] = gi
+            f[i] = fi
+            CHA[i] = n
+            Tn.append(i)
           continue
           
         if i in OPEN: # thuoc OPEN
