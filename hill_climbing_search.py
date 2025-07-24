@@ -16,7 +16,7 @@ def hill_climbing_search(sodinh, adj, h, start, stop):
         if CHA[i] == -1:
           print(i)
         else:
-          print(i, end="<==")                
+          print(i, end="<==")
         i=CHA[i]
           
       return True
