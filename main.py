@@ -6,6 +6,7 @@ from at import AT
 from cms import CMS
 from a_star import a_star
 from branch_and_bound import branch_and_bound
+from tomau import to_mau
 
 
 from readfile import read_mtk, read_heuristic
@@ -25,12 +26,14 @@ if __name__ == "__main__":
     # mtk_filename = "a_star.mtk"
     # h_filename = "a_star.heuristic"
     
-    mtk_filename = "branch_and_bound.mtk"
-    h_filename = "branch_and_bound.heuristic"
+    # mtk_filename = "branch_and_bound.mtk"
+    # h_filename = "branch_and_bound.heuristic"
+    
+    mtk_filename = "tomau.mtk"
     
     sodinh,adj = read_mtk(f"data/{mtk_filename}")
-    h = read_heuristic(f"data/{h_filename}")
-
+    # h = read_heuristic(f"data/{h_filename}")
+    
     # BFS(sodinh, adj, 0, 7)
     # DFS(sodinh, adj, 0, 4)
     # hill_climbing_search(sodinh,adj,h,0,8)
@@ -38,7 +41,11 @@ if __name__ == "__main__":
     # AT(sodinh,adj,h,17,16)
     # CMS(sodinh, adj, 0, 9)
     # a_star(sodinh,adj,h,0,10)
-    branch_and_bound(sodinh,adj,h,0,7)
+    # branch_and_bound(sodinh,adj,h,0,7)
+    to_mau(sodinh,adj)
+    
+    
+    
 
     
 

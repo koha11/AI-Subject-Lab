@@ -54,7 +54,6 @@ def CMS(sodinh, adj, start, stop):
     print(f"OPEN={OPEN}")
     print(f"CHA={CHA}")
     print()
-
   
   print(f"Ko tim thay duong di tu {start} - {stop}")
   return False

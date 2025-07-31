@@ -11,6 +11,7 @@ def branch_and_bound(sodinh, adj, h, start, stop):
   CHA=[-1] * sodinh
   
   fmin = float('inf')
+  flag = False
     
   while(len(OPEN) > 0):
     n = OPEN.pop(0)    
@@ -20,6 +21,7 @@ def branch_and_bound(sodinh, adj, h, start, stop):
     print(f"CLOSE={CLOSE}")
     
     if n == stop:
+      flag = True
       if f[n] < fmin:
         print(f"cap nhat fmin {f[n]} < {fmin}")
         fmin = f[n]
@@ -35,7 +37,7 @@ def branch_and_bound(sodinh, adj, h, start, stop):
         
     Tn = []
             
-    for i in range(sodinh):
+    for i in range(sodinh):                                          
       if adj[n][i] > 0:
         gi = g[n] + adj[n][i]
         fi = gi + h[i]
@@ -76,11 +78,14 @@ def branch_and_bound(sodinh, adj, h, start, stop):
     print(f"CHA={CHA}")
     print()
   
-  print(f"Tim thay duong di tu {start} - {stop} f={fmin}")
-  i=stop
-  while i != -1:
-    if CHA[i] == -1:
-      print(i)
-    else:
-      print(i, end="<==")
-    i=CHA[i]
+  if flag:
+    print(f"Tim thay duong di tu {start} - {stop} f={fmin}")
+    i=stop
+    while i != -1:
+      if CHA[i] == -1:
+        print(i)
+      else:
+        print(i, end="<==")
+      i=CHA[i]
+  else:  
+    print(f"Khong tim thay duong di tu {start} - {stop}")

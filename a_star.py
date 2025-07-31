@@ -48,8 +48,7 @@ def a_star(sodinh, adj, h, start, stop):
             f[i] = fi
                               
     print(f"T[{n}]={Tn}")
-    
-    
+        
     OPEN += Tn
     
     OPEN.sort(key=lambda x : f[x])
